@@ -40,6 +40,28 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Door_of_Soul.Communication\Door_of_Soul.Communication.Client\Door_of_Soul.Communication.Client.csproj">
+      <Project>{df20e90e-7c05-4620-a122-686af8161211}</Project>
+      <Name>Door_of_Soul.Communication.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Door_of_Soul.Communication\Door_of_Soul.Communication.Protocol.External\Door_of_Soul.Communication.Protocol.External.csproj">
+      <Project>{747f0ed6-82fd-44dc-994b-f9d2b9dde3f9}</Project>
+      <Name>Door_of_Soul.Communication.Protocol.External</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Door_of_Soul.Communication\Door_of_Soul.Communication\Door_of_Soul.Communication.csproj">
+      <Project>{90c6178d-f9ee-4160-b7e6-d450afe03bec}</Project>
+      <Name>Door_of_Soul.Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Door_of_Soul.Core\Door_of_Soul.Core.Client\Door_of_Soul.Core.Client.csproj">
+      <Project>{8cdd1fe1-98c2-4bf5-b635-8c788d931f8b}</Project>
+      <Name>Door_of_Soul.Core.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Door_of_Soul.Core\Door_of_Soul.Core\Door_of_Soul.Core.csproj">
+      <Project>{34c59e1e-eee2-4b13-9802-39dae818abfd}</Project>
+      <Name>Door_of_Soul.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
