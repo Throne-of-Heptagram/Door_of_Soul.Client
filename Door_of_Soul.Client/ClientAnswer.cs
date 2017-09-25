@@ -7,6 +7,10 @@ namespace Door_of_Soul.Client
         public ClientAnswer(int answerId, string answerName) : base(answerId, answerName)
         {
         }
+        public override string ToString()
+        {
+            return $"Client{base.ToString()}";
+        }
 
         public override void LoadProxySoul(int soulId, string soulName, bool isActivated, int answerId, int[] avatarIds)
         {

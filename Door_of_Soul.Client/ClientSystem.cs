@@ -6,6 +6,11 @@ namespace Door_of_Soul.Client
 {
     public class ClientSystem : VirtualSystem
     {
+        public override string ToString()
+        {
+            return $"Client{base.ToString()}";
+        }
+
         public override OperationReturnCode Register(string answerName, string basicPassword, out string errorMessage)
         {
             if (answerName.Length < 1 || answerName.Length > 20)
