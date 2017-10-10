@@ -1,4 +1,5 @@
-﻿using Door_of_Soul.Communication.Client.System;
+﻿using System;
+using Door_of_Soul.Communication.Client.System;
 using Door_of_Soul.Core.Client;
 using Door_of_Soul.Core.Protocol;
 
@@ -6,6 +7,9 @@ namespace Door_of_Soul.Client
 {
     public class ClientSystem : VirtualSystem
     {
+        public override event Action<OperationReturnCode, string> OnRegisterResponse;
+        public override event LoginResponseEventHandler OnLoginResponse;
+
         public override string ToString()
         {
             return $"Client{base.ToString()}";
@@ -39,6 +43,16 @@ namespace Door_of_Soul.Client
                 errorMessage = "";
                 return OperationReturnCode.Successiful;
             }
+        }
+
+        public override void RegisterResponse(OperationReturnCode returnCode, string operationMessage)
+        {
+            OnRegisterResponse?.Invoke(returnCode, operationMessage);
+        }
+
+        public override void LoginResponse(OperationReturnCode returnCode, string operationMessage, string trinityServerAddress, int trinityServerPort, string trinityServerApplicationName, int answerId, string answerAccessToken)
+        {
+            OnLoginResponse?.Invoke(returnCode, operationMessage, trinityServerAddress, trinityServerPort, trinityServerApplicationName, answerId, answerAccessToken);
         }
     }
 }
